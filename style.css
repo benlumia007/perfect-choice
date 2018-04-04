@@ -1,0 +1,636 @@
+/*
+Theme Name:  Perfect Choice
+Theme URI: https://www.benjlu.com/portfolio/perfect-choice/
+Author: Benjamin Lu
+Author URI: https://www.benjlu.com/
+Description: Perfect Choice is a fully functional mobile friendly WordPress theme that allows you to create amazing things.
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, holiday
+Version: 0.0.1
+Text Domain: perfect-choice
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*
+========================================================================================================================================
+Table of Content
+========================================================================================================================================
+ 1.0 - Typography
+ 2.0 - Elements
+ 3.0 - Forms
+ 4.0 - Alignments
+ 5.0 - Accessibility
+ 6.0 - Clearings
+ 7.0 - Basic Structure
+ 8.0 - Navigation (Links)
+ 9.0 - Navigation (Primary Navigation)
+10.0 - Navigation (Secondary Navigation)
+11.0 - Navigation (Pagination Navigation)
+12.0 - Navigation (Social Navigation)
+13.0 - Header Area (Header Image)
+14.0 - Content Area (Posts and Pages)
+15.0 - Content Area (Archives)
+16.0 - Content Area (Comments)
+17.0 - Content Area (Error 404)
+18.0 - Content Area (Search)
+19.0 - Content Area (Post Formats)
+20.0 - Widget Area
+21.0 - Footer Area
+22.0 - Media Area (Captions)
+23.0 - Media Area (Galleries)
+24.0 - Media Queries (Mobile Small 30em (480px))
+25.0 - Media Queries (Mobile Medium 37.50em (600px))
+26.0 - Media Queries (Mobile Large 41.688em (667px))
+27.0 - Media Queries (Mobile Extra Large 46em (736px))
+28.0 - Media Queries (Tablet Small 48em (768px))
+29.0 - Media Queries (Tablet Medium 64em (1024px))
+30.0 - Media Queries (Desktop Large 75em (1200px))
+31.0 - Media Queries (Desktop Extra Large 75.063em (1201))
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+ 1.0 - Typography
+========================================================================================================================================
+*/
+body {
+    font-family: 'Merriweather', serif;
+}
+
+h1 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0.67em 0;
+}
+
+h2 {
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0.83em 0;
+}
+
+h3 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1.17em;
+    font-weight: 700;
+    margin: 1em 0;
+}
+
+h4 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 1.33em 0;
+}
+
+h5 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: .83em;
+    font-weight: 700;
+    margin: 1.67em 0;
+}
+
+h6 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: .67em;
+    font-weight: 700;
+    margin: 2.33em 0;
+}
+
+/*
+========================================================================================================================================
+ 2.0 - Elements
+========================================================================================================================================
+*/
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { 
+	box-sizing: inherit;
+}
+
+/*
+========================================================================================================================================
+ 3.0 - Forms
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+ 4.0 - Alignments
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+ 5.0 - Accessibility
+========================================================================================================================================
+*/
+.screen-reader-text {
+    clip: rect(0.063em, 0.063em, 0.063em, 0.063em);
+    height: 0.063em;
+    overflow: hidden;
+    position: absolute !important;
+    width: 0.063em;
+}
+
+.screen-reader-text:focus {
+    background: #f1f1f1;
+    border-radius: 0.188em;
+    box-shadow: 0 0 0.125em 0.125em;
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 0.875em;
+    font-weight: 700;
+    height: auto;
+    left: 0.313em;
+    line-height: normal;
+    padding: 0.938em 1.438em 0.875em;
+    text-decoration: none;
+    top: 0.313em;
+    width: auto;
+    z-index: 100000; 
+}
+
+/*
+========================================================================================================================================
+ 6.0 - Clearings
+========================================================================================================================================
+*/
+.main-navigation:before,
+.main-navigation:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/*
+========================================================================================================================================
+ 7.0 - Basic Structure
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+ 8.0 - Navigation (Links)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+ 9.0 - Navigation (Primary Navigation)
+========================================================================================================================================
+*/
+.main-navigation {
+    background: #000000;
+    min-height: 3.4em;
+}
+
+.primary-navigation {
+    display: block;
+    width: 100%;
+}
+
+.primary-navigation ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+}
+
+.primary-navigation li {
+	border-top: 0.063em solid #eaeaea;
+	border-top: 0.063em solid rgba(51, 51, 51, 0.1);
+	position: relative;
+}
+
+.primary-navigation ul ul {
+    display: none;
+    margin-left: 0.5em;
+}
+
+.primary-navigation a {
+    color: #ffffff;
+    display: block;
+    line-height: 1.5em;
+    padding: 0.5em 1em;
+    position: relative;
+    text-decoration: none;
+}
+
+.primary-navigation a:hover,
+.primary-navigation a:focus {
+    background: #ffffff;
+    color: #000000;
+}
+
+.primary navigation a,
+.primary-navigation ul ul li:lastchild a {
+    border-bottom: 0.063em solid #ffffff;
+}
+
+.primary-navigation ul li:last-child a {
+    border-bottom: none;
+}
+
+.primary-navigation ul .toggled-on {
+    display: block;
+}
+
+.primary-navigation .current-menu-item > a,
+.primary-navigation .current-menu-ancestor > a,
+.primary-navigation .current_page_item > a,
+.primary-navigation .current_page_ancestor > a {
+	font-weight: 700;
+}
+
+.primary-navigation .nav-menu > ul > li:first-child,
+.primary-navigation .nav-menu > li:first-child {
+	border-top: 0;
+}
+
+.primary-navigation .menu-item-has-children > a,
+.primary-navigation .page_item_has_children > a{
+	padding-right: 3em;
+}
+
+.no-js .primary-navigation ul ul {
+	display: block;
+}
+
+.dropdown-toggle {
+    background: #000000;
+    border: 0.063em solid #ffffff;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+    color: #ffffff;
+    font-family: 'fontawesome';
+    height: 1.75em;
+    padding: 0;
+    position: absolute;
+    right: 0.313em;
+    top: 0.313em;
+    width: 1.75em;
+}
+
+.dropdown-toggle:after {
+    font-size: 1em;
+    content: "\f078";
+    left: 0;
+    line-height: 1.875em;
+    position: relative;
+    top: 0;
+    width: 1.875em;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+	background: #ffffff;
+	color: #000000;
+}
+
+.dropdown-toggle.toggle-on:after {
+	content: "\f077";
+}
+
+.primary-navigation.toggled {
+    bottom: 0;
+    padding: 1em;
+    position: fixed;
+    z-index: 1;
+}
+
+.nav-menu {
+    background: #000000;
+	padding: 1em;
+	margin-bottom: 3em;
+}
+
+.primary-navigation.toggled ul {
+	max-height: calc(100vh - 8em);
+	overflow-y: auto;
+}
+
+.primary-navigation.toggled ul ul {
+	display: none;
+}
+
+.primary-navigation.toggled ul ul.toggled-on,
+.primary-navigation.toggled ul ul.toggled-on > ul {
+	display: block;
+}
+
+.menu-toggle {
+	background-color: #000;
+	border: solid 2px #fff;
+	bottom: 1em;
+	color: #fff;
+    display: none;
+	font-family: 'Sanchez', serif;
+	font-size: 1em;
+	left: 1em;
+    padding: 0.4em;
+	position: fixed;
+	transition: all ease-out 400ms;
+	z-index: 100;
+}
+
+.menu-toggle.hide {
+	bottom: -2.5em;
+}
+
+.toggled .menu-toggle.hide {
+	bottom: 1em;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+	text-decoration: underline;
+}
+
+.main-navigation .search-form .search-field {
+    border: 0.063em solid #cccccc;
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	background: #ededed url(images/search-icon.png) no-repeat 9px center;
+	padding: 0.5em 0.625em 0.5em 2em;
+	width: 5.3125em;
+	-webkit-border-radius: 8em;
+	-moz-border-radius: 8em;
+	border-radius: 8em;
+    -webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.main-navigation .search-form .search-field:focus {
+    background-color: #ffffff;
+	width: 130px;
+	border: #66CC75;
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+.main-navigation .search-form .search-submit {
+    display: none;
+}
+
+/*
+========================================================================================================================================
+10.0 - Navigation (Secondary Navigation)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+11.0 - Navigation (Pagination Navigation)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+12.0 - Navigation (Social Navigation)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+13.0 - Header Area (Header Image)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+14.0 - Content Area (Posts and Pages)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+15.0 - Content Area (Archives)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+16.0 - Content Area (Comments)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+17.0 - Content Area (Error 404)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+18.0 - Content Area (Search)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+19.0 - Content Area (Post Formats)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+20.0 - Widget Area
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+21.0 - Footer Area
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+22.0 - Media Area (Captions)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+23.0 - Media Area (Galleries)
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+24.0 - Media Queries (Mobile Small 30em (480px))
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+25.0 - Media Queries (Mobile Medium 37.50em (600px))
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+26.0 - Media Queries (Mobile Large 41.688em (667px))
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+27.0 - Media Queries (Mobile Extra Large 46em (736px))
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+28.0 - Media Queries (Tablet Small 48em (768px))
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+29.0 - Media Queries (Tablet Medium 64em (1024px))
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+30.0 - Media Queries (Table Large 75em (1200px))
+========================================================================================================================================
+*/
+
+/*
+========================================================================================================================================
+31.0 - Media Queries (Desktop Extra Large 75.063em (1201px))
+========================================================================================================================================
+*/
+@media screen and (min-width: 64.063em) {
+    .primary-search {
+        margin: 0 auto;
+        max-width: 75.375em;
+        
+    }
+    .primary-navigation {
+        clear: none;
+        float: left;
+        width: 82.90598290598291%;
+    }
+    
+    .site-search {
+        float: right;
+        padding: 0.5625em;
+        text-align: right;
+        width: 16%;
+    }
+    
+	/* Position the menu in the header */
+	.primary-navigation,
+	.primary-navigation.toggled {
+		position: relative;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+	
+	.primary-navigation ul,
+	.primary-navigation.toggled ul {
+		max-height: none;
+		padding-left: 0;
+		text-align: right;
+        
+	}
+	
+	.primary-navigation.toggled ul {
+		overflow-y: visible;
+	}
+	
+	/* Display the menu items in a horizontal order */
+	.primary-navigation li {
+		display: inline-block;
+		border: none;
+	}
+	
+	/* Add an outline to the drop-down menus */
+	.primary-navigation ul ul {
+		outline: 1px solid #333;
+	}
+	
+	/* Left-align drop-down menu items */
+	.primary-navigation li li {
+		display: block;
+		text-align: left;
+	}
+    
+    .primary-navigation a {
+        padding: 0.5em 1em;
+    }
+	
+	.primary-navigation a,
+	.primary-navigation ul ul li:last-child a {
+		border-bottom: none;
+	}
+    
+    .primary-navigation ul ul li a {
+        color: #ffffff;
+    }
+	
+	/* Add an outline on hovered and focused menu items */
+	.primary-navigation a:hover,
+	.primary-navigation a:focus {
+		background: transparent;
+		color: #ffffff;
+		text-decoration: underline;
+		outline: solid 1px #b3b3b3;
+	}
+	
+	/* Create hover and focus contrast on drop-down items */
+	.primary-navigation li li a:hover,
+	.primary-navigation li li a:focus {
+		background: #eee;
+		color: #000;
+		text-decoration: none;
+	}
+	
+	/* Position drop-down menus absolutely */
+	.primary-navigation ul ul.toggled-on {
+        background: #000000;
+		display: block;
+		margin-left: 0;
+		position: absolute;
+        right: 0;
+		width: 17em;
+		z-index: 10;
+	}
+	
+	.primary-navigation ul ul ul.toggled-on {
+		right: 0;
+        padding-left: 1em;
+        position: relative;
+	}
+	
+	/* Indent 3rd level drop-down menus */
+	.primary-navigation ul ul ul a {
+		padding-left: 2em;
+	}
+    
+    .nav-menu {
+        padding: 0.4em;
+    }
+}

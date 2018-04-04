@@ -16,49 +16,13 @@ WordPress may have default files or functions to perform their jobs.
 ===============================================================================================================
 */
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-    <head>
-        <meta charset="<?php bloginfo('charset'); ?>" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="http://gmpg.org/xfn/11" rel="profile" />
-        <?php wp_head(); ?>
-    </head>
-<body <?php body_class(); ?>>
-    <?php if (is_front_page() && !is_home()) { ?> 
-        <header id="site-header" class="site-header custom-image">
-            <div class="site-avatar"></div>
-            <div id="site-branding" class="site-branding">
-                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-                <h4 class="site-description"><?php bloginfo('description'); ?></h4>
-            </div>
-        </header>
-    <?php } else if (get_header_image()) { ?>
-        <header id="site-header" class="site-header header-image">
-            <div id="site-branding" class="site-branding">
-                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-                <h4 class="site-description"><?php bloginfo('description'); ?></h4>
-            </div>
-        </header>
-    <?php } ?>
-    <section id="main-navigation" class="main-navigation">
-        <div id="primary-search" class="primary-search">
-        <?php if (has_nav_menu('primary-navigation')) { ?>
-            <nav id="site-navigation" class="primary-navigation">
-                <button class="menu-toggle" aria-conrol="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'perfect-choice'); ?></button>
-                <?php wp_nav_menu(array(
-                    'theme_location'    => 'primary-navigation',
-                    'menu_id'           => 'primary-menu',
-                    'menu_class'        => 'nav-menu',
-                )); 
-                ?>
-            </nav>            
-        <?php } ?>
-        <div id="site-search" class="site-search">
-            <?php get_search_form(); ?>
-        </div>
-        </div>
-    </section>
-    <?php wp_footer(); ?>
-</body>
-</html>
+<?php get_header(); ?>
+    <div id="content-area" class="content-area">
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <?php get_template_part('template-parts/content', get_post_format()); ?>
+        <?php endwhile; ?>
+        <?php else : ?>
+        <?php endif; ?>
+    </div>
+<?php get_footer(); ?>

@@ -58,6 +58,7 @@ Table of Content
 ========================================================================================================================================
 */
 body {
+    background: #1e1e1e;
     font-family: 'Merriweather', serif;
 }
 
@@ -185,12 +186,21 @@ html {
  7.0 - Basic Structure
 ========================================================================================================================================
 */
+.site-main {
+    margin: 0 auto;
+    padding: 1.125em;
+    max-width: 1206px;
+}
 
 /*
 ========================================================================================================================================
  8.0 - Navigation (Links)
 ========================================================================================================================================
 */
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
 
 /*
 ========================================================================================================================================
@@ -367,7 +377,7 @@ html {
 .main-navigation .search-form .search-field {
     border: 0.063em solid #cccccc;
 	-webkit-appearance: textfield;
-	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
 	background: #ededed url(images/search-icon.png) no-repeat 9px center;
 	padding: 0.5em 0.625em 0.5em 2em;
 	width: 5.3125em;
@@ -443,6 +453,51 @@ html {
 14.0 - Content Area (Posts and Pages)
 ========================================================================================================================================
 */
+.content-area .post {
+    background: #2c2c2c;
+    border: 0.063em solid #cccccc;
+    color: #ffffff;
+    margin-bottom: 1.125em; /* 18px */
+    min-height: 18.875em;
+    padding: 1.125em; /* 18px */
+}
+
+.content-area .entry-header .entry-title {
+    margin: 0;
+    padding: 0;
+}
+
+.content-area .entry-content,
+.content-area .entry-excerpt {
+    line-height: 1.6em;
+}
+
+.content-area .has-post-thumbnail {
+    position: relative;
+    padding-left: 19.938em;
+}
+
+.content-area .has-post-thumbnail .post-thumbnail {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.recent-posts .continue-reading,
+.content-area .post .entry-excerpt .continue-reading,
+.section-blog .entry-content .continue-reading {
+    text-align: center;
+}
+
+.recent-posts .continue-reading a, 
+.content-area .post .entry-excerpt .continue-reading a,
+.section-blog .entry-content .continue-reading a {
+    background: #333333;
+    border: 0.063em solid #cccccc;
+    display: inline-block;
+    line-height: 1.6em;
+    padding: 0.5em 1em;
+}
 
 /*
 ========================================================================================================================================
@@ -485,6 +540,23 @@ html {
 21.0 - Footer Area
 ========================================================================================================================================
 */
+.site-footer {
+    background: #000000;
+    padding: 1.125em;
+    text-align: center;
+}
+
+.site-footer,
+.site-footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-title {
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1.125em;
+}
 
 /*
 ========================================================================================================================================
@@ -509,6 +581,64 @@ html {
 25.0 - Media Queries (Mobile Medium 37.50em (600px))
 ========================================================================================================================================
 */
+@media screen and (min-height: 30.063em) and (max-width: 37.50em) {
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .right-sidebar .widget-area {
+        float: none;
+        margin-top: 1.125em;
+        width: 100%;
+    }
+    
+    .jetpack-portfolio-grid li {
+        list-style: none;
+        float: none;
+        margin: 0;
+        padding: 0.5em;
+        width: 100%;
+    }
+    
+    .blog-grid li {
+        float: none;
+        margin-bottom: 1.125em;
+        width: 100%;
+    }
+    
+    .contact-grid li {
+        float: none;
+        width: 100%;
+    }
+}
 
 /*
 ========================================================================================================================================
@@ -558,7 +688,7 @@ html {
     }
     
     .site-search {
-        float: right;
+        float: left;
         padding: 0.5625em;
         text-align: right;
         width: 16%;
@@ -577,7 +707,7 @@ html {
 	.primary-navigation.toggled ul {
 		max-height: none;
 		padding-left: 0;
-		text-align: right;
+		text-align: center;
         
 	}
 	

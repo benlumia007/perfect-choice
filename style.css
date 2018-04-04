@@ -413,6 +413,30 @@ html {
 13.0 - Header Area (Header Image)
 ========================================================================================================================================
 */
+.site-header {
+    background: #000000;
+    padding: 10em 0;
+}
+
+.site-branding {
+    text-align: center;
+}
+
+.site-title,
+.site-description {
+    margin: 0;
+    padding: 0;
+}
+
+.site-title a {
+    color: #ffffff;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.site-description {
+    color: #ffffff;
+}
 
 /*
 ========================================================================================================================================

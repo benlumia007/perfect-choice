@@ -12,7 +12,6 @@ or index.
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (https://www.benjlu.com/)
 ================================================================================================
-        <span class="entry-timestamp"><?php echo camaraderie_entry_time_stamp_setup(); ?></span>
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -20,8 +19,8 @@ or index.
         <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('perfect-choice-small-thumbnails'); ?></a>
     </div>
     <header class="entry-header">
-
         <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?>
+        <span class="entry-timestamp"><?php echo perfect_choice_entry_time_stamp_setup(); ?></span>
     </header>
     <div class="entry-excerpt">
         <?php the_excerpt(); ?>
@@ -29,7 +28,7 @@ or index.
             <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
                 <?php
                     printf(
-                        wp_kses(__('Continue reading %s', 'camaraderie'), array('span' => array('class' => array()))),
+                        wp_kses(__('Continue reading %s', 'perfect-choice'), array('span' => array('class' => array()))),
                         the_title('<span class="screen-reader-text">"', '"</span>', false)
                     );
                 ?>

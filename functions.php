@@ -262,3 +262,4 @@ add_action('widgets_init', 'perfect_choice_register_sidebars_setup');
 require_once(get_template_directory() . '/extras/inline-styles/header-image.php');
 require_once(get_template_directory() . '/includes/custom-header.php');
 require_once(get_template_directory() . '/includes/extras.php');
+require_once(get_template_directory() . '/includes/template-tags.php');

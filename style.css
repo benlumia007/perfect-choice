@@ -453,13 +453,20 @@ a {
 14.0 - Content Area (Posts and Pages)
 ========================================================================================================================================
 */
-.content-area .post {
+.content-area .post,
+.content-area .page {
     background: #2c2c2c;
     border: 0.063em solid #cccccc;
     color: #ffffff;
     margin-bottom: 1.125em; /* 18px */
     min-height: 18.875em;
     padding: 1.125em; /* 18px */
+}
+
+.content-area .entry-header {
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .content-area .entry-header .entry-title {

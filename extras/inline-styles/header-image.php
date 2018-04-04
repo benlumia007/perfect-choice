@@ -19,7 +19,7 @@ function perfect_choice_inline_styles_header_image_setup() {
                 background: url({$header_image});
                 background-repeat: no-repeat;
                 background-position: center;
-                background-attachment: scroll;
+                background-attachment: fixed;
                 min-height: 10em;
             }
         ";

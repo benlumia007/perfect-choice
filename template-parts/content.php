@@ -28,7 +28,7 @@ or index.
             <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
                 <?php
                     printf(
-                        wp_kses(__('Continue reading %s', 'perfect-choice'), array('span' => array('class' => array()))),
+                        wp_kses(__('Read More %s', 'perfect-choice'), array('span' => array('class' => array()))),
                         the_title('<span class="screen-reader-text">"', '"</span>', false)
                     );
                 ?>

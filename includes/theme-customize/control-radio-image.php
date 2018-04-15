@@ -91,7 +91,7 @@ function perfect_choice_control_radio_image_layout_setup($wp_customize) {
     ));
     
     $wp_customize->add_setting('global_layout', array(
-        'default'           => 'no-sidebar',
+        'default'           => 'left-sidebar',
         'sanitize_callback' => 'perfect_choice_sanitize_layout',
         'transport'         => 'refresh',
         'type'              => 'theme_mod',
@@ -104,9 +104,9 @@ function perfect_choice_control_radio_image_layout_setup($wp_customize) {
         'settings'      => 'global_layout',
         'type'          => 'radio-image',
         'choices'       => array(
-			'no-sidebar'    => trailingslashit( get_template_directory_uri() ) . 'images/1col.png',
 			'left-sidebar'  => trailingslashit( get_template_directory_uri() ) . 'images/2cl.png',
-			'right-sidebar' => trailingslashit( get_template_directory_uri() ) . 'images/2cr.png',
+            'right-sidebar' => trailingslashit( get_template_directory_uri() ) . 'images/2cr.png',
+			'no-sidebar'    => trailingslashit( get_template_directory_uri() ) . 'images/1col.png',
         ),
     )));
     
@@ -136,9 +136,9 @@ function perfect_choice_control_radio_image_layout_setup($wp_customize) {
         'settings'      => 'custom_layout',
         'type'          => 'radio-image',
         'choices'       => array(
-			'no-sidebar'    => trailingslashit( get_template_directory_uri() ) . 'images/1col.png',
 			'left-sidebar'  => trailingslashit( get_template_directory_uri() ) . 'images/2cl.png',
-			'right-sidebar' => trailingslashit( get_template_directory_uri() ) . 'images/2cr.png',
+            'right-sidebar' => trailingslashit( get_template_directory_uri() ) . 'images/2cr.png',
+			'no-sidebar'    => trailingslashit( get_template_directory_uri() ) . 'images/1col.png',
         ),
     )));
 }

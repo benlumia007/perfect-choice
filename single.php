@@ -18,7 +18,7 @@ perform their jobs.
 */
 ?>
 <?php get_header(); ?>
-    <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'no-sidebar')); ?>">
+    <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'left-sidebar')); ?>">
         <div id="content-area" class="content-area">
             <?php while (have_posts()) : the_post(); ?>
                 <?php get_template_part('template-parts/content', 'single'); ?>

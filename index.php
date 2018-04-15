@@ -27,4 +27,9 @@ WordPress may have default files or functions to perform their jobs.
                 <?php get_template_part('template-parts/content', 'none'); ?>
         <?php endif; ?>
     </div>
+    <?php if ('left-sidebar' == get_theme_mod('global_layout')) { ?>
+        <?php get_sidebar(); ?>
+    <?php } else if ('right-sidebar' == get_theme_mod('global_layout')) { ?>
+        <?php get_sidebar(); ?>
+    <?php } ?>
 <?php get_footer(); ?>

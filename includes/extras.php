@@ -48,6 +48,14 @@ add_action('wp_head', 'perfect_choice_pingback_setup');
  2.0 - Post Thumbnail Setup
 ===========================================================================================================
 */
+function perfect_choice_unset_has_post_thumbnail($classes) {
+    $class_key = array_search('has-post-thumbnail', $classes);
+    if (is_singular() || is_post_type_archive('jetpack-portfolio') || is_post_type_archive('jetpack-testimonial')) {
+        unset($classes[$class_key]);
+    }     
+    return $classes;
+}
+add_filter('post_class', 'perfect_choice_unset_has_post_thumbnail');
 
 /*
 ===========================================================================================================

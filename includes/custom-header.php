@@ -69,10 +69,10 @@ function perfect_choice_custom_header_setup() {
     ===========================================================================================================
     */
     register_default_headers(array(
-    'header-image' => array(
-        'url'           => '%s/images/header-image.jpg',
-        'thumbnail_url' => '%s/images/header-image.jpg',
-        'description'   => esc_html__( 'Header Image', 'perfect-choice')
+        'header-image' => array(
+            'url'           => '%s/images/header-image.jpg',
+            'thumbnail_url' => '%s/images/header-image.jpg',
+            'description'   => esc_html__( 'Header Image', 'perfect-choice')
     )));
 }
 add_action('after_setup_theme', 'perfect_choice_custom_header_setup');

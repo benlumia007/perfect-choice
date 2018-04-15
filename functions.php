@@ -87,7 +87,7 @@ function perfect_choice_theme_setup() {
     
     /*
     ===========================================================================================================
-    Enable and activate add_theme_support('post-thumbnails); for Camaraderie WordPress Theme. This feature 
+    Enable and activate add_theme_support('post-thumbnails); for Perfect Choice WordPress Theme. This feature 
     enables Post Thumbnails (Featured Images) support for a theme. If you wish to display thumbnails, use the 
     following to display the_post_thumbnail();. If you need to to check of there is a post thumbnail, then use 
     has_post_thumbnail();.
@@ -97,16 +97,24 @@ function perfect_choice_theme_setup() {
 
     /*
     ===========================================================================================================
-    add_image_size('camaraderie-small-thumbnails', 300, 300, true); should be used under the following files, 
+    add_image_size('perfect-choice-small-thumbnails', 300, 300, true); should be used under the following files, 
     content.php
     ===========================================================================================================
     */
     add_image_size('perfect-choice-small-thumbnails', 300, 300, true);
+
+    /*
+    ===========================================================================================================
+    add_image_size('perfect-choice-medium-thumbnails', 300, 300, true); should be used under the following files, 
+    content.php
+    ===========================================================================================================
+    */
+    add_image_size('perfect-choice-medium-thumbnails', 1206, 300, true);
     
     /*
     ===========================================================================================================
-    Enable and activate load_theme_textdomain('camaraderie'); for Camaraderie WordPress Theme. This feature make 
-    this theme available for translation. 
+    Enable and activate load_theme_textdomain('perfect-choice'); for Perfect Choice WordPress Theme. This 
+    feature make this theme available for translation. 
     ===========================================================================================================
     */
     load_theme_textdomain('perfect-choice', get_template_directory_uri() . '/languages');
@@ -227,8 +235,8 @@ function perfect_choice_register_sidebars_setup() {
     ===========================================================================================================
     */
     register_sidebar(array(
-        'name'          => __('Secondary Sidebar', 'perfect-choice'),
-        'description'   => __('Add widgets here to appear in your sidebar on Pages only.', 'perfect-choice'),
+        'name'          => esc_html__('Secondary Sidebar', 'perfect-choice'),
+        'description'   => esc_html__('Add widgets here to appear in your sidebar on Pages only.', 'perfect-choice'),
         'id'            => 'secondary-sidebar',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
@@ -238,13 +246,13 @@ function perfect_choice_register_sidebars_setup() {
     
     /*
     ===========================================================================================================
-    Enable and activate Custom Sidebar for Camaraderie WordPress Theme. The Primary Sidebar should only show in 
-    the blog posts only rather in the page. 
+    Enable and activate Custom Sidebar for Perfect Choice WordPress Theme. The Primary Sidebar should only show 
+    in the blog posts only rather in the page. 
     ===========================================================================================================
     */
     register_sidebar(array(
-        'name'          => __('Custom Sidebar', 'perfect-choice'),
-        'description'   => __('Add widgets here in your sidebar on Custom Pages only.', 'perfect-choice'),
+        'name'          => esc_html__('Custom Sidebar', 'perfect-choice'),
+        'description'   => esc_html__('Add widgets here in your sidebar on Custom Pages only.', 'perfect-choice'),
         'id'            => 'custom-sidebar',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
@@ -262,4 +270,6 @@ add_action('widgets_init', 'perfect_choice_register_sidebars_setup');
 require_once(get_template_directory() . '/extras/inline-styles/header-image.php');
 require_once(get_template_directory() . '/includes/custom-header.php');
 require_once(get_template_directory() . '/includes/extras.php');
+require_once(get_template_directory() . '/includes/jetpack.php');
 require_once(get_template_directory() . '/includes/template-tags.php');
+require_once(get_template_directory() . '/includes/theme-customize/control-radio-image.php');

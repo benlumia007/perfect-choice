@@ -7,7 +7,7 @@ Description: Perfect Choice is a fully functional mobile friendly WordPress them
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, holiday
-Version: 0.0.1
+Version: 0.0.2
 Text Domain: perfect-choice
 
 This theme, like WordPress, is licensed under the GPL.
@@ -125,6 +125,13 @@ html {
 	box-sizing: inherit;
 }
 
+figure,
+img {
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+}
+
 /*
 ========================================================================================================================================
  3.0 - Forms
@@ -164,7 +171,7 @@ input[type="submit"]:hover {
 */
 .alignleft {
 	display: inline;
-	float: left;
+    float: left;
 	margin-right: 1.5em;
 }
 
@@ -223,7 +230,11 @@ input[type="submit"]:hover {
 .site-content:before,
 .site-content:after,
 .post-navigation:before,
-.post-navigation:after {
+.post-navigation:after,
+.content-area:before,
+.content-area:after,
+.entry-content:before,
+.entry-content:after {
     clear: both;
     content: "";
     display: table;
@@ -507,6 +518,7 @@ a {
 
 .posts-navigation,
 .post-navigation {
+    background: #2c2c2c;
     border: 0.063em solid #cccccc;
     clear: both;
     padding: 0.938em;
@@ -526,7 +538,6 @@ a {
 
 .posts-navigation .nav-links .nav-previous .post-previous,
 .post-navigation .nav-links .nav-previous .post-previous {
-
     display: block;
     font-size: 0.9375em;
     font-weight: 700;
@@ -596,6 +607,16 @@ a {
 14.0 - Content Area (Posts and Pages)
 ========================================================================================================================================
 */
+.right-sidebar .content-area {
+    float: left;
+    width: 71.28205128205128%;
+}
+
+.left-sidebar .content-area {
+    float: right;
+    width: 71.28205128205128%;
+}
+
 .content-area .post,
 .content-area .page {
     background: #2c2c2c;
@@ -649,8 +670,12 @@ a {
     padding: 0.5em 1em;
 }
 
+.content-area .post .entry-post-thumbnail {
+    margin-bottom: 0.2em;
+}
+
 .content-area .post .entry-metadata {
-    margin: 1.250em 0;
+    margin: 0;
     padding: 1em;
     text-align: center;
 }
@@ -659,30 +684,30 @@ a {
     border: 0.4em solid #cccccc;
     border-radius: 50%;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 0.5em auto;
 }
 
-.content-area .post .entry-metadata .by-author {
+.content-area .post .entry-metadata .byline {
     display: block;
     font-family: 'Sanchez', serif;
-    font-size: 1.250em;
+    font-size: 1.125em;
 }
 
 .content-area .post .entry-metadata .published,
 .content-area .post .entry-metadata .entry-comments {
     display: block;
-    font-size: 12px;
+    font-size: 0.875em;
 }
 
 .sticky {
-    
+    border: 0.063em solid #000000;
 }
 
 .cat-link,
 .tag-link {
     display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-size: 0.875em;
+    margin-bottom: 0.313em;
 }
 
 .tag-link .fa-tags {
@@ -913,6 +938,180 @@ p.comment-awaiting-moderation {
 20.0 - Widget Area
 ========================================================================================================================================
 */
+.left-sidebar .widget-area {
+    float: left;
+    width: 27.17948717948718%;
+}
+
+.right-sidebar .widget-area {
+    float: right;
+    width: 27.17948717948718%;
+}
+
+.widget-area .search-form:before,
+.widget-area .search-form:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.widget-area .search-form {
+    padding: 0.938em;
+    background: #555;
+    max-width: 100%;
+}
+
+.widget-area .search-field {
+    border: none;
+    float: left;
+    font-family: 'Merriweather', serif;
+    font-size: 1em;
+    padding: 0.563em;
+    width: 100%;
+}
+
+.widget-area .search-submit {
+    border: none;
+    background: #d88f3c;
+    color: #ffffff;
+    float: right;
+    font-family: 'Merriweather', serif;
+    font-size: 1em;
+    display: none;
+    padding: 0.5em;
+    position: relative;
+    width: 30%;
+}
+
+.widget-area .widget {
+    background: #2c2c2c;
+    border: 0.063em solid #cccccc;
+    color: #ffffff;
+    margin-bottom: 1.125em;
+    font-size: 0.875em;
+    padding: 1.125em;
+}
+
+.widget ul,
+.widget ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget li {
+    margin: 0.4em 0 0 0;
+}
+
+.widget li li {
+    margin-left: 1.125em;
+}
+
+.widget select {
+    font-family: 'Merriweather', serif;
+    margin: 0.625em 0;
+    padding: 0.5em;
+    width: 100%;
+}
+
+.widget.widget_post_thumbnail {
+    padding-bottom: 0;
+}
+
+.widget-title {
+    color: #ffffff;
+    margin: 0 0 0.5em 0;
+}
+
+.rss-widget-icon {
+    display: none;
+}
+
+.rsswidget {
+    display: block;
+}
+
+.widget_rss cite {
+    display: block;
+    font-size: 0.875em;
+    font-weight: 700;
+    margin-bottom: 1.125em;
+}
+
+.widget-area table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.widget-area tr:nth-of-type(odd) {
+    background: #eeeeee;
+}
+
+.widget-area th {
+    background: #333333;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.widget-area th, td {
+    border: 0.063em solid #cccccc;
+    text-align: left;
+    padding: 0.438em;
+}
+
+.rss-date {
+    font-size: 0.875em;
+}
+
+.rssSummary {
+    margin-top: 10px;
+}
+
+#wp-calendar table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#wp-calendar tr:nth-of-type(odd) {
+    background: #eeeeee;
+}
+
+#wp-calendar th {
+    background: #999999;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+}
+
+#wp-calendar th,
+#wp-calendar td {
+    border: 0.063em solid #cccccc;
+    padding: 0.438em;
+}
+
+#wp-calendar {
+    border: 0.063em solid #cccccc;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#wp-calendar a {
+    color: #1d1d1d;
+    font-weight: 700;
+}
+
+#wp-calendar caption {
+    font-weight: 700;
+    margin: 5px 0;
+    text-align: center;
+}
+
+#wp-calendar #today {
+    background: #cccccc;
+    font-weight: 700;
+}
 
 /*
 ========================================================================================================================================
@@ -959,7 +1158,7 @@ p.comment-awaiting-moderation {
 
 .wp-caption .wp-caption-text,
 .gallery-caption {
-    background: #eeeeee;
+    background: #666666;
     padding: 0.313em;
     text-align: center;
 }

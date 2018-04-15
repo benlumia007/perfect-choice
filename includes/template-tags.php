@@ -1,8 +1,8 @@
 <?php
 /*
-================================================================================================
+===============================================================================================================
 Perfect Choice - template-tags.php
-================================================================================================
+===============================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
 for a theme (the other being functions.php). This template-tags.php template file allows you to 
 add additional features and functionality to a WordPress theme which is stored in the includes 
@@ -13,52 +13,55 @@ the WordPress theme which is stored in the root of the theme's directory.
 @copyright      Copyright (C) 2018. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (https://www.benjlu.com/)
-================================================================================================
+===============================================================================================================
 */
 
 /*
-================================================================================================
+===============================================================================================================
 Table of Content
-================================================================================================
- 1.0 - Entry Posted On Setup
+===============================================================================================================
+ 1.0 - Author Avatar Size
+ 2.0 - Author Byline
  2.0 - Entry Time Stamp Setup
- 3.0 - Entry Taxonomies Setup
-================================================================================================
+ 3.0 - Entry Posted On Setup
+ 4.0 - Entry Taxonomies Setup
+===============================================================================================================
 */
 
 /*
-================================================================================================
- 1.0 - Entry Posted On Setup
-================================================================================================
+===============================================================================================================
+ 1.0 - Author Avatar Size
+===============================================================================================================
 */
-function perfect_choice_entry_posted_on_setup() {
-    $author_avatar_size = apply_filters('perfect_choice_author_avatar_size', 80);
-    printf('<span class="byline"><span class="author vcard">%1$s</span>',
-        get_avatar(get_the_author_meta('user_email'), $author_avatar_size) 
-    );
-    
-    printf(('<span class="by-author"><b>%3$s</b></span><span class="published"><b>%2$s</b></span>'), 'meta-prep meta-prep-author', 
-    sprintf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-        esc_url(get_permalink()),
-        esc_attr(get_the_time()),
-        get_the_date(get_option('date_format'))),
-    sprintf('<a href="%1$s" title="%2$s">%3$s</a>',
-    esc_url(get_author_posts_url(get_the_author_meta('ID'))),
-    esc_attr(sprintf(__('View all posts by %s', 'perfect-choice'), get_the_author())), 
-    get_the_author()
-    ));
+function perfect_choice_author_avatar_size_setup() {
+    $author_avatar_size = apply_filters('perfect_choice_author_avatar_size', 75);
 
+    printf('%1$s', get_avatar(get_the_author_meta('user_email'), $author_avatar_size));
+}
+
+/*
+===============================================================================================================
+ 1.0 - Author Byline
+===============================================================================================================
+*/
+function perfect_choice_author_byline_setup() {
+    $byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>';
+    echo '<span class="byline"> ' . $byline . '</span>';
+    echo perfect_choice_entry_time_stamp_setup();
+}
+
+function perfect_choice_add_comment_setup() {
     if ( !is_page() && !post_password_required() && (comments_open() || get_comments_number())) {
-        echo '<span class="entry-comments"><b>';
-            comments_popup_link( sprintf( __( 'Add a Comment', 'perfect-choice')));
-        echo '</b></span>';
+        echo '<span class="entry-comments">';
+            comments_popup_link(sprintf(esc_html__('Add a Comment', 'perfect-choice')));
+        echo '</span>';
     }
 }
 
 /*
-================================================================================================
+===============================================================================================================
  2.0 - Entry Time Stamp Setup
-================================================================================================
+===============================================================================================================
 */
 function perfect_choice_entry_time_stamp_setup() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -77,9 +80,20 @@ function perfect_choice_entry_time_stamp_setup() {
 }
 
 /*
-================================================================================================
- 3.0 - Entry Taxonomies Setup
-================================================================================================
+===============================================================================================================
+ 3.0 - Entry Posted On Setup
+===============================================================================================================
+*/
+function perfect_choice_entry_posted_on_setup() {
+    perfect_choice_author_avatar_size_setup();
+    perfect_choice_author_byline_setup();
+    perfect_choice_add_comment_setup();
+}
+
+/*
+===============================================================================================================
+ 4.0 - Entry Taxonomies Setup
+===============================================================================================================
 */
 function perfect_choice_entry_taxonomies_setup() {
     $cat_list = get_the_category_list(esc_html__(' | ', 'perfect-choice'));

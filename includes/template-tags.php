@@ -34,7 +34,7 @@ Table of Content
 function perfect_choice_entry_posted_on_setup() {
     $author_avatar_size = apply_filters('perfect_choice_author_avatar_size', 80);
     printf('<span class="byline"><span class="author vcard">%1$s</span>',
-        get_avatar(get_the_author_meta('user_email' ), $author_avatar_size) 
+        get_avatar(get_the_author_meta('user_email'), $author_avatar_size) 
     );
     
     printf(('<span class="by-author"><b>%3$s</b></span><span class="published"><b>%2$s</b></span>'), 'meta-prep meta-prep-author', 
@@ -71,12 +71,9 @@ function perfect_choice_entry_time_stamp_setup() {
 		esc_html(get_the_date()),
 		esc_attr(get_the_modified_date('c')),
 		esc_html(get_the_modified_date())
-	);
-
-	return sprintf(
-		__('<span class="screen-reader-text">Posted on</span> %s', 'perfect-choice'),
-		'<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+    );
+    
+    return sprintf('<a href="'. esc_url(get_permalink()) .'">'. $time_string .'</a>');
 }
 
 /*
@@ -85,20 +82,20 @@ function perfect_choice_entry_time_stamp_setup() {
 ================================================================================================
 */
 function perfect_choice_entry_taxonomies_setup() {
-    $cat_list = get_the_category_list(__(' | ', 'perfect-choice'));
-    $tag_list = get_the_tag_list('', __(' | ', 'perfect-choice'));
+    $cat_list = get_the_category_list(esc_html__(' | ', 'perfect-choice'));
+    $tag_list = get_the_tag_list('', esc_html(' | ', 'perfect-choice'));
 
     if ($cat_list) {
-        printf('<div class="cat-link"> %1$s <span class="cat-list"l><b><i>%2$s</i></b></span></div>',
-        __('<i class="fa fa-folder-open-o"></i> Posted In', 'perfect-choice'),  
+        printf('<div class="cat-link"><i class="fa fa-folder-open-o"></i> %1$s <span class="cat-list">%2$s</span></div>',
+        esc_html__('Posted On', 'perfect-choice'),
         $cat_list
         );
     }
 
     if ($tag_list) {
-        printf('<div class="tag-link">%1$s <span class="tag-list"><b><i>%2$s</i></b></span></div>',
-        __('<i class="fa fa-tags"></i> Tagged', 'perfect-choice'),  
-        $tag_list 
+        printf('<div class="tag-link"><i class="fa fa-tags"></i> %1$s <span class="tag-list">%2$s</span></div>',
+        esc_html__('Tagged', 'perfect-choice'),
+        $tag_list
         );
     }
 }

@@ -3,67 +3,85 @@
 ===============================================================================================================
 Perfect Choice - custom-header.php
 ===============================================================================================================
-This is the most generic template file in a WordPress theme and is one of the requirements to set custom header 
+This is trhe most generic template file in a WodPress theme and is one of the requirements to set custom header 
 image and styling for the header. 
 
 @package        Perfect Choice WordPress Theme
 @copyright      Copyright (C) 2018. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (https://www.benjlu.com/)
-================================================================================================
+===============================================================================================================
 */
 
 /*
-================================================================================================
+===============================================================================================================
 Table of Content
-================================================================================================
+===============================================================================================================
 1.0 - Custom Header Setup
 2.0 - Custom Header CSS 
-================================================================================================
+===============================================================================================================
 */
 
 /*
-================================================================================================
+===============================================================================================================
 1.0 - Custom Header Setup 
-================================================================================================
+===============================================================================================================
 */
 function perfect_choice_custom_header_setup() {
     $args = array(
-        // Text color and image (empty to use none).
+        /*
+        =======================================================================================================
+        Default Text Color and Default Image when used for a custom header.
+        =======================================================================================================
+        */
         'default-text-color'     => 'ffffff',
         'default-image'          => get_template_directory_uri() . '/images/header-image.jpg',
 
-        // Set height and width, with a maximum value for the width.
+        /*
+        =======================================================================================================
+        This will set height and width of the image and set the max width as well.
+        =======================================================================================================
+        */
         'height'                 => 1200,
         'width'                  => 2000,
         'max-width'             =>  2000,
 
-        // Support flexible height and width.
+        /*
+        =======================================================================================================
+        Support flexible Height and Width
+        =======================================================================================================
+        */
         'flex-height'            => false,
         'flex-width'             => false,
 
-        // Random image rotation off by default.
-        'random-default'         => false,
-
-        // Callbacks for styling the custom header style.
+        /*
+        =======================================================================================================
+        Callbacks for styling the custom header style.
+        =======================================================================================================
+        */
         'wp-head-callback'       => 'perfect_choice_header_style',
     );
     add_theme_support( 'custom-header', $args );
     
+    /*
+    ===========================================================================================================
+    This will set the default headers for header image. 
+    ===========================================================================================================
+    */
     register_default_headers(array(
     'header-image' => array(
         'url'           => '%s/images/header-image.jpg',
         'thumbnail_url' => '%s/images/header-image.jpg',
-        'description'   => __( 'Header Image', 'perfect-choice')
+        'description'   => esc_html__( 'Header Image', 'perfect-choice')
     )));
 }
 add_action('after_setup_theme', 'perfect_choice_custom_header_setup');
 
 
 /*
-================================================================================================
+===============================================================================================================
 2.0 - Custom Header CSS 
-================================================================================================
+===============================================================================================================
 */
 function perfect_choice_header_style() {
 	$text_color = get_header_textcolor();

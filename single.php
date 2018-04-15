@@ -1,7 +1,7 @@
 <?php
 /*
 ================================================================================================
-Perfect Choice - index.php
+Perfect Choice - single.php
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
 for a theme (the other being style.css). The index.php template file is flexible. It can be used to 
@@ -18,25 +18,23 @@ perform their jobs.
 */
 ?>
 <?php get_header(); ?>
-    <section id="site-main" class="site-main">
-        <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'no-sidebar')); ?>">
-            <div id="content-area" class="content-area">
-                <?php while (have_posts()) : the_post(); ?>
-                    <?php get_template_part('template-parts/content', 'single'); ?>
-                <?php endwhile; ?>
-                <?php 
-                    the_post_navigation(array(
-                        'next_text' => '<span class="post-next" aria-hiddent="true">' . esc_html__('Next', 'perfect-choice') . '</span>' . '<span class="post-title">%title</span>',
-                        'prev_text' => '<span class="post-previous" aria-hidden="true">' . esc_html__( 'Previous', 'perfect-choice' ) . '</span> ' . '<span class="post-title">%title</span>',
-                    ));
-                ?>
-                <?php comments_template(); ?>
-            </div>
-            <?php if ('left-sidebar' == get_theme_mod('global_layout')) { ?>
-                <?php get_sidebar(); ?>
-            <?php } else if ('right-sidebar' == get_theme_mod('global_layout')) { ?>
-                <?php get_sidebar(); ?>
-            <?php } ?>
+    <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'no-sidebar')); ?>">
+        <div id="content-area" class="content-area">
+            <?php while (have_posts()) : the_post(); ?>
+                <?php get_template_part('template-parts/content', 'single'); ?>
+            <?php endwhile; ?>
+            <?php 
+                the_post_navigation(array(
+                    'next_text' => '<span class="post-next" aria-hiddent="true">' . esc_html__('Next', 'perfect-choice') . '</span>' . '<span class="post-title">%title</span>',
+                    'prev_text' => '<span class="post-previous" aria-hidden="true">' . esc_html__( 'Previous', 'perfect-choice' ) . '</span> ' . '<span class="post-title">%title</span>',
+                ));
+            ?>
+            <?php comments_template(); ?>
         </div>
-    </section>
+        <?php if ('left-sidebar' == get_theme_mod('global_layout')) { ?>
+            <?php get_sidebar(); ?>
+        <?php } else if ('right-sidebar' == get_theme_mod('global_layout')) { ?>
+            <?php get_sidebar(); ?>
+        <?php } ?>
+    </div>
 <?php get_footer(); ?>

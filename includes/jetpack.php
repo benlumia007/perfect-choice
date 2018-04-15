@@ -4,8 +4,8 @@
 Perfect Choice - jetpack.php
 ===========================================================================================================
 This is the most generic template file in a WordPress theme and is one of the required file for a theme. 
-This extras.php template file allows you to add additional features and functionality to a WordPress theme 
-which is stored in the extras folder and its called in the functions.php
+This jetpack.php template file allows you to add additional features and functionality to a WordPress theme 
+which uses the jetpack by WordPress plugin. 
 
 @package        Perfect Choice WordPress Theme
 @copyright      Copyright (C) 2018. Benjamin Lu

@@ -219,7 +219,11 @@ input[type="submit"]:hover {
 ========================================================================================================================================
 */
 .main-navigation:before,
-.main-navigation:after {
+.main-navigation:after,
+.site-content:before,
+.site-content:after,
+.post-navigation:before,
+.post-navigation:after {
     clear: both;
     content: "";
     display: table;
@@ -455,6 +459,101 @@ a {
 11.0 - Navigation (Pagination Navigation)
 ========================================================================================================================================
 */
+.pagination {
+    text-align: center;
+}
+
+.page-numbers {
+    background: #ffffff;
+    border: 0.063em solid #c3c3c3;
+    color: #333333;
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+}
+
+.page-numbers:hover {
+	background: #000;
+	color: #fff;
+	border-color: #000;
+}
+
+.page-number:hover a {
+    color: #ffffff;
+}
+
+.page-numbers.current {
+    background: #000000;
+    color: #ffffff;
+}
+
+.page-links > a {
+    border: 0.063em solid #999999;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.page-links > a:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+.page-links > span {
+    background: #000000;
+    border: 0.063em solid #666666;
+    color: #ffffff;
+    padding: 0.5em 1em;
+}
+
+.posts-navigation,
+.post-navigation {
+    border: 0.063em solid #cccccc;
+    clear: both;
+    padding: 0.938em;
+}
+
+.posts-navigation .nav-links .nav-previous,
+.post-navigation .nav-links .nav-previous {
+    float: left;
+    margin: 0.5em 0;
+}
+
+.posts-navigation .nav-links .nav-next,
+.post-navigation .nav-links .nav-next {
+    float: right;
+    margin: 0.5em 0;
+}
+
+.posts-navigation .nav-links .nav-previous .post-previous,
+.post-navigation .nav-links .nav-previous .post-previous {
+
+    display: block;
+    font-size: 0.9375em;
+    font-weight: 700;
+    text-align: left;
+}
+
+.posts-navigation .nav-links .nav-next .post-next,
+.post-navigation .nav-links .nav-next .post-next {
+    display: block;
+    font-size: 0.9375em;
+    font-weight: 700;
+    text-align: right
+}
+
+.posts-navigation .nav-links .nav-previous .post-title,
+.post-navigation .nav-links .nav-previous .post-title {
+    font-size: 0.813em;
+}
+
+.posts-navigation .nav-links .nav-next .post-title,
+.post-navigation .nav-links .nav-next .post-title {
+    font-size: 0.813em;
+}
+
+.link-pages {
+    text-align: center; 
+}
 
 /*
 ========================================================================================================================================
@@ -550,8 +649,49 @@ a {
     padding: 0.5em 1em;
 }
 
+.content-area .post .entry-metadata {
+    margin: 1.250em 0;
+    padding: 1em;
+    text-align: center;
+}
+
+.content-area .post .entry-metadata .avatar {
+    border: 0.4em solid #cccccc;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.content-area .post .entry-metadata .by-author {
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1.250em;
+}
+
+.content-area .post .entry-metadata .published,
+.content-area .post .entry-metadata .entry-comments {
+    display: block;
+    font-size: 12px;
+}
+
 .sticky {
     
+}
+
+.cat-link,
+.tag-link {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.tag-link .fa-tags {
+    margin: 0;
+}
+
+.tag-list,
+.cat-list {
+    font-size: 0.750em;
 }
 
 /*
@@ -566,14 +706,15 @@ a {
 ========================================================================================================================================
 */
 .comments-area {
-    background: #ffffff;
+    background: #2c2c2c;
     border: 0.063em solid #cccccc;
     margin: 0.938em 0;
     padding: 1.125em;    
 }
 
 .comments-title {
-    margin-bottom: 20px;
+    color: #ffffff;
+    margin: 0 0 1.125em 0;
     text-align: center;
 }
 
@@ -583,9 +724,10 @@ a {
 }
 
 .comment-body {
-    border: 1px solid #cccccc;
-    margin-bottom: 20px;
-    padding: 10px;
+    border: 0.063em solid #cccccc;
+    color: #ffffff;
+    margin-bottom: 1.250em;
+    padding: 0.625em;
 }
 
 .comments-area > ol  {
@@ -597,7 +739,7 @@ a {
     border-radius: 50%;
     float: left; 
     display: block;
-    margin-right: 10px;
+    margin-right: 0.625em;
 }
 
 .comment-author .fn {
@@ -609,7 +751,7 @@ a {
 }
 
 .comment-meta {
-    font-size: 12px;
+    font-size: 0.750em;
 }
 
 .comment-content {
@@ -632,7 +774,7 @@ a {
     border: 0.063em solid #cccccc;
     color: #373737;
 	display: inline-block;
-	padding: 0.5em 1.4em;
+	padding: 0.5em 1em;
 	text-decoration: none;
 }
 
@@ -643,8 +785,8 @@ a {
 }
 
 .comment-list ol {
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 1.250em;
+    margin-left: 1.250em;
 }
 
 ol.children {
@@ -653,16 +795,16 @@ ol.children {
 }
 
 .content-meta {
-    margin-left: 70px;
+    margin-left: 4.375em;
 }
 
 .comment-navigation {
-    border-top: 1px solid #999;
-    border-bottom: 1px solid #999;
+    border-top: 0.063 solid #999;
+    border-bottom: 0.063em solid #999;
 }
 
 .comment-navigation i {
-    padding: 10px;
+    padding: 0.625em;
 }
 
 .comment-previous {
@@ -674,15 +816,16 @@ ol.children {
 
 .bypostauthor > .comment-body {
     background: #f0f0f0; 
-    padding: 10px;
+    padding: 0.625em;
     position: relative;
 }
 
 .comment-reply-title {
-    font-size: 20px;
+    color: #ffffff;
+    font-size: 1.250em;
     margin: 0;
     padding: 0;
-    padding-top: 10px;
+    padding-top: 0.625em;
 }
 
 .comment-form p {
@@ -691,7 +834,7 @@ ol.children {
 
 .required {
     color: #FF0000;
-    font-size: 10px;
+    font-size: 10.625em;
 }
 
 .comment-awaiting-moderation {
@@ -703,13 +846,14 @@ ol.children {
 
 .form-allowed-tags {
     font-size: 0.813em;
-    width: 600px;
+    width: 37.5em;
 }
 
 .comment-form .comment-form-comment label,
 .comment-form .comment-form-author label,
 .comment-form .comment-form-email label,
 .comment-form .comment-form-url label {
+    color: #ffffff;
     display: block;
     font-weight: 700;
 }

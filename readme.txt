@@ -3,8 +3,8 @@ Perfect Choice WordPress Theme
 Contributor: benlumia007
 Tags: custom-background, custom-header, left-sidebar, right-sidebar
 Requres at least: 4.5
-Tested up to: 4.9.2
-Stable tag: 0.1.8
+Tested up to: 4.9.5
+Stable tag: 0.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,10 @@ Not Available.
 
 Changelog
 ===============================================================================================================
+Version: 0.0.2
+- Minor Changes to the CSS 
+- Added Necessary Files for the templates
+
 Version: 0.0.1
 - Initial Release
 
@@ -82,14 +86,6 @@ Source: https://fonts.google.com/specimen/Sanchez
 
 Author: Vojtech Okenka (https://www.pexels.com/u/vojtech-okenka-127162/)
 Source: https://www.pexels.com/photo/apple-business-computer-connection-392018/
-License: CC0 License (https://www.pexels.com/photo-license/)
-
-Author: Tookapic (https://www.pexels.com/u/tookapic/)
-Source: https://www.pexels.com/photo/desk-notebook-pencil-notes-73988/
-License: CC0 License (https://www.pexels.com/photo-license/)
-
-Author: freestocks.org (https://www.pexels.com/u/freestocks/)
-Source: https://www.pexels.com/photo/silhouette-of-woman-during-sunset-194446/
 License: CC0 License (https://www.pexels.com/photo-license/)
 
 

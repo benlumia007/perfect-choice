@@ -4,7 +4,7 @@ Contributor: benlumia007
 Tags: custom-background, custom-header, left-sidebar, right-sidebar
 Requres at least: 4.5
 Tested up to: 4.9.5
-Stable tag: 0.0.2
+Stable tag: 0.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,8 +55,11 @@ Not Available.
 
 Changelog
 ===============================================================================================================
+Version: 0.0.4
+- Change Screenshot
+
 Version: 0.0.3
-- Changed Screenshot
+- Add Licensing for Screenshot
 
 Version: 0.0.2
 - Minor Changes to the CSS 

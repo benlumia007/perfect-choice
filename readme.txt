@@ -55,6 +55,9 @@ Not Available.
 
 Changelog
 ===============================================================================================================
+Version: 0.0.3
+- Changed Screenshot
+
 Version: 0.0.2
 - Minor Changes to the CSS 
 - Added Necessary Files for the templates
@@ -84,8 +87,8 @@ Designer: Daniel Hernandez
 License: Sil Open Font License
 Source: https://fonts.google.com/specimen/Sanchez
 
-Author: Vojtech Okenka (https://www.pexels.com/u/vojtech-okenka-127162/)
-Source: https://www.pexels.com/photo/apple-business-computer-connection-392018/
+Author: Min An (https://www.pexels.com/@minan1398)
+Source: https://www.pexels.com/photo/woman-with-black-long-hair-smiling-680239/
 License: CC0 License (https://www.pexels.com/photo-license/)
 
 
